@@ -1,2 +1,1 @@
 # Bug-Bounty
-# Bug-Bounty

@@ -1,4 +1,4 @@
-name: ci 
+name: siddhesh shinde
 on:
   push:
     branches:
@@ -8,25 +8,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: siddheshshinde/Bug-Bounty
         with:
           submodules: recursive
 
-      # Checks-out submodules
-      - uses: actions/checkout@v2
-      - name: Checkout submodules
-        shell: bash
-        run: |
-          git config --global user.email "no-reply@github.com"
-          git config --global user.name "Swk"
-          git config --global pull.rebase false
-          git submodule add https://github.com/swisskyrepo/PayloadsAllTheThings/ docs
-
-      - uses: actions/setup-python@v2
-        with:
-          python-version: 3.x
-      - run: pip install mkdocs-material
-      - run: pip install mkdocs-git-revision-date-localized-plugin
-      - run: pip install mkdocs-git-committers-plugin
-      - run: mkdocs gh-deploy --force
-
+      
